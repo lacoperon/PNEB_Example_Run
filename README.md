@@ -1,4 +1,9 @@
-# Description of this run
+# PNEB Example Run
+
+The code shown here is an example of running PNEB on multiple GPUS
+using the 2018 version of the AMBER Molecular Dynamics program. 
+
+## Description of this run
 
 This PNEB run uses 32 beads, 4 GPUs, and the following protocol
 (adapted from "Energetic Preference of 8-oxodG Eversion Pathways in a DNA

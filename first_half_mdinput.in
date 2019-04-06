@@ -1,0 +1,33 @@
+Initial Heating of 5JU*_[GC|N1] structures on NEB pathway
+&cntrl
+imin = 0, irest = 0,
+ntc=1, ntf=1, !Turns SHAKE off (should we keep SHAKE on?)
+ntpr=5000, !print energy info every ntpr steps
+ntwx=50000,!rewrite rst file every ntwr steps
+ntb = 1,   !periodic boundary conditions are applied
+cut = 8.0, !non-bond cutoff of 8A
+rgbmax=999.0,!effective Born radii term (this is default value)
+!igb = 1, ! We have explicit solvent, so we don't want this
+!saltcon=0.2, ! We have explicit solvent, so we don't want this
+nstlim = 40000, !nsteps
+nscm=0,!???
+dt = 0.002,!timestep
+ntt = 3,!Langevin Dynamics
+gamma_ln=100.0,!100 ps-1, as in their protocol
+tempi=0.0,!initial temperature
+temp0=330.0,!final temperature
+tgtfitmask=":1-495",
+tgtrmsmask=":1-495@N,CA,C,P,O5,O3",
+ineb = 1,!toggles PNEB
+skmin = 10,!spring constant
+skmax = 10,!spring constant
+nmropt=1,
+/
+&wt type='TEMP0', istep1=0,istep2=40000,
+value1=0.0, value2=330.0
+/
+&wt type='TEMP0', istep1=40001,istep2=290000,
+value1=330.0, value2=330.0
+/
+&wt type='END'
+/

@@ -36,3 +36,22 @@ Second Half:
 2) Equilibration at 386K for 220ps (220,000 timesteps)
 3) Annealing (temp drop) from 386K to 330K over 100ps (100,000 timesteps)
 4) Final Equilibration for 500ps (500,000 timesteps)
+
+## Usage
+
+To run the first stage, run `nohup sh pneb_first_half.sh &` on an 
+MD-capable machine with 4 unused, sufficiently good GPUs. 
+
+Check progress  or time to finish  by looking at any non-end-bead 
+file within `inf` (Example: `cat pneb_bead_03_1st.inf`). 
+
+Check relative energies of beads by looking at any file within `out` 
+(Example: `cat pneb_bead_03_1st.inf`).
+
+To run the second stage, run (after first stage completion)
+`nohup sh pneb_second_half.sh &` on a MD-capable machine with 4
+unused, sufficiently good GPUs.
+
+To check progress, time to finish, or relative energies of beads,
+follow the directions shown above except on beads with `2nd` at
+the end of their name.

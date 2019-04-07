@@ -9,9 +9,9 @@ cut = 8.0, !non-bond cutoff of 8A
 rgbmax=999.0,!effective Born radii term (this is default value)
 !igb = 1, ! We have explicit solvent, so we don't want this
 !saltcon=0.2, ! We have explicit solvent, so we don't want this
-nstlim = 40000, !nsteps
+nstlim = 580000, !nsteps
 nscm=0,!???
-dt = 0.002,!timestep
+dt = 0.001,!timestep
 ntt = 3,!Langevin Dynamics
 gamma_ln=100.0,!100 ps-1, as in their protocol
 tempi=0.0,!initial temperature
@@ -23,10 +23,10 @@ skmin = 10,!spring constant
 skmax = 10,!spring constant
 nmropt=1,
 /
-&wt type='TEMP0', istep1=0,istep2=40000,
+&wt type='TEMP0', istep1=0,istep2=80000,
 value1=0.0, value2=330.0
 /
-&wt type='TEMP0', istep1=40001,istep2=290000,
+&wt type='TEMP0', istep1=80001,istep2=580000,
 value1=330.0, value2=330.0
 /
 &wt type='END'
